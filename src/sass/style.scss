@@ -1,0 +1,149 @@
+@import 'normalize';
+@import 'mixins';
+@import 'animations';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.visuallyhidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.header {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    @include flexPosition(initial, flex-end);
+    background-image: url('../assets/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+
+    &__container {
+        @include container;
+        height: 60%;
+        @include flexPosition(space-between, initial);
+        flex-direction: column;
+        padding-bottom: 40px;
+    }
+
+    & .nav {
+        position: fixed;
+        width: 100%;
+        height: 90px;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid black;
+        @include flexPosition(center, center);
+
+        &.colorNav {
+            background-color: green;
+        }
+
+        &__container {
+            @include flexPosition(space-between, center);
+            @include container;
+
+        }
+
+        &__menu {
+            @include flexPosition(space-between, center);
+        }
+
+        &__item {
+            margin-left: 4rem;
+        }
+
+        &__link {
+            font-size: 1.9rem;
+            color: #fff;
+            padding: 12px 27px;
+            position: relative;
+            border-radius: 80px;
+
+            &:focus,
+            &:hover {
+                outline: none;
+
+                &:before {
+                    border-radius: 80px;
+                    animation: animateBorderBefore .4s linear forwards;
+
+
+                }
+
+                &:after {
+                    border-radius: 80px;
+                    animation: animateBorderAfter .4s linear forwards;
+                }
+
+
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                width: 0;
+                height: 0;
+                background: transparent;
+                border: 2px solid transparent;
+
+                transition: .5s;
+
+            }
+        }
+
+        &__logo-img {
+            width: 280px;
+            height: auto;
+        }
+
+    }
+
+    &__text {}
+
+    &__footer {
+        overflow-x: hidden;
+        @include flexPosition(space-between, flex-end);
+    }
+
+    &__lotto-logo {
+        max-width: 150px;
+        height: auto;
+    }
+
+
+}
