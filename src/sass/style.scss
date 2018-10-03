@@ -9,18 +9,21 @@
 }
 
 html {
-    font-size: 10px;
+    @include fluidSize(10px, 30px);
 }
 
 body {
     overflow-x: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: 'Lato', sans-serif;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .visuallyhidden {
@@ -34,24 +37,27 @@ a {
     border: 0;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-
 .header {
-    height: 100vh;
+    // height: auto;
+    // min-height: 100vh;
     width: 100vw;
+    height: 100vh;
     display: flex;
     @include flexPosition(initial, flex-end);
     background-image: url('../assets/bg2.jpg');
     background-size: cover;
     background-position: center;
+    @media only screen and (max-height: 700px) and (min-width: 1300px){
+        height: 120vh;
+    }
+    // @media only screen and (max-height: 480px) {
+    //     height: auto;
+    // }
+
 
     &__container {
         @include container;
-        height: 60%;
+        height: 70%;
         @include flexPosition(space-between, initial);
         flex-direction: column;
         padding-bottom: 40px;
@@ -60,56 +66,51 @@ ul {
     & .nav {
         position: fixed;
         width: 100%;
-        height: 90px;
+        height: 80px;
         top: 0;
         left: 0;
-        border-bottom: 1px solid black;
+        @include fluidSize(50px, 90px);
+        height: 1em;
         @include flexPosition(center, center);
 
         &.colorNav {
-            background-color: green;
+            background-color: $violet;
         }
 
         &__container {
             @include flexPosition(space-between, center);
             @include container;
-
+            height: 60px;
         }
 
         &__menu {
             @include flexPosition(space-between, center);
+            @include fluidSize(11px, 19px);
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
         }
 
         &__item {
-            margin-left: 4rem;
+            margin-left: 2em;
+            line-height: .5em;
         }
 
-        &__link {
-            font-size: 1.9rem;
-            color: #fff;
-            padding: 12px 27px;
+        &__link {  
+            font-size: 1em;
+            @include fontStyle(#fff, 700);
             position: relative;
-            border-radius: 80px;
-
+            padding: .4em 1em;
             &:focus,
             &:hover {
                 outline: none;
-
                 &:before {
-                    border-radius: 80px;
                     animation: animateBorderBefore .4s linear forwards;
-
-
                 }
-
                 &:after {
-                    border-radius: 80px;
                     animation: animateBorderAfter .4s linear forwards;
                 }
-
-
             }
-
             &:before,
             &:after {
                 content: '';
@@ -119,31 +120,141 @@ ul {
                 width: 0;
                 height: 0;
                 background: transparent;
+                border-radius: 80px;
                 border: 2px solid transparent;
-
                 transition: .5s;
-
             }
         }
-
         &__logo-img {
-            width: 280px;
-            height: auto;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
         }
 
+        &__logo-link {
+            display: block;
+            height: 30px;
+        }
+
+        &__logo {
+            position: relative;
+            width: 1.5em;
+            min-width: 150px;
+        }
+        & .burger {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            height: 36px;
+            width: 60px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            transform: rotate(0deg) translateY(-50%);
+            transition: .5s ease-in-out;
+            outline: none;
+            display: none;
+            @media screen and (max-width: 768px){
+                display: block;
+            }
+            &__span {
+                display: block;
+                position: absolute;
+                height: 5px;
+                width: 100%;
+                left: 0;
+                background: #fff;
+                border-radius: 9px;
+                opacity: 1;
+                transform: rotate(0deg);
+                transition: .25 ease-in-out;
+                &:nth-child(1){
+                    top: 0;
+                }
+                &:nth-child(2), &:nth-child(3){
+                    top: 15px;
+                }
+                &:nth-child(4){
+                    top: 30px;
+                }      
+                
+            }
+            &.open {
+                & .burger__span:nth-child(1){
+                    top: 15px;
+                    width: 0;
+                    left: 50%;
+                }
+                & .burger__span:nth-child(2){
+                    transform: rotate(45deg);
+                }
+                & .burger__span:nth-child(3){
+                    transform: rotate(-45deg);
+                }
+                & .burger__span:nth-child(4){
+                    top: 15px;
+                    width: 0;
+                    left: 50%;
+                }
+            }
+        }
     }
 
-    &__text {}
+    &__title {
+        color: #ffff;
+        @include fluidSize(25px, 70px);
+        font-weight: 800;
+        margin-bottom: 0.4em;
+        // margin-top: 3.7em;
+    }
+
+    &__subtitle {
+        @include fluidSize(12px, 22px);
+        color: $lightBlue;
+    }
+
+    &__button {
+        color: #fff;
+        @include fluidSize(11px, 19px);
+        border: none;
+        background-color: rgb(50, 42, 90);
+        padding: .7em 1.6em;
+        margin-top: 4.5em;
+        // margin-bottom: 3em;
+        transition: .3s;
+        &:nth-of-type(2) {
+            padding: .7em 1.8em;
+            transform: translateX(-11px);
+            @media only screen and (max-width: 1180px) {
+                transform: translateX(0);
+            }
+        }
+        &:hover {
+            background-color: #6166ED;
+            cursor: pointer;
+        }
+        &:focus {
+            outline: none;
+            border: 2px solid $violet;
+        }
+    }
 
     &__footer {
         overflow-x: hidden;
+        // margin-top: .7em;
         @include flexPosition(space-between, flex-end);
     }
 
     &__lotto-logo {
-        max-width: 150px;
+        width: 3.5rem;
         height: auto;
     }
+}
 
 
+section {
+    background-color: rgb(81, 34, 134);
+    height: 100vh;
 }
