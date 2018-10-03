@@ -1,6 +1,14 @@
+(function(){   
 const navigation = document.querySelector('.nav');
 const menuButton = document.querySelector('.burger');
 const navigationMenu = document.querySelector('.nav__menu');
+
+
+
+window.addEventListener('scroll', () => {
+    this.scrollY >= 300 ? navigation.classList.add('colorNav') : navigation.classList.remove('colorNav')
+})
+
 
 menuButton.addEventListener('click', () => {
     menuButton.classList.toggle('open');
@@ -22,3 +30,5 @@ menuButton.addEventListener('click', () => {
     }
 
 })
+
+}())
