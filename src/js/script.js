@@ -6,9 +6,43 @@
     const menuHeigh = document.querySelector('.nav').getBoundingClientRect().height;
 
 
+    function isInViewport(element) {
+        const scroll = window.scrollY || window.pageYOffset
+        const boundsTop = element.getBoundingClientRect().top + scroll
+        console.log(scroll);
+        console.log(boundsTop);
+        const viewport = {
+            top: scroll,
+            bottom: scroll + window.innerHeight,
+        }
+
+        const bounds = {
+            top: boundsTop,
+            bottom: boundsTop + element.clientHeight,
+        }
+
+        return (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
+            (bounds.top <= viewport.bottom && bounds.top >= viewport.top);
+
+    }
+
+    const colorizeNav = () => {
+        window.scrollY >= 300 ? navigation.classList.add('colorNav') : navigation.classList.remove('colorNav');
+    }
+
+    const animateonScroll = () => {
+        const el = document.querySelectorAll('.animate');
+        el.forEach(el=> {
+            if (isInViewport(el)) {
+                el.classList.add('animateScroll')
+            }
+    
+        })
+    }
 
     window.addEventListener('scroll', () => {
-        this.scrollY >= 300 ? navigation.classList.add('colorNav') : navigation.classList.remove('colorNav')
+        colorizeNav();
+        animateonScroll()
     })
 
 
