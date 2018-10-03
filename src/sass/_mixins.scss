@@ -12,6 +12,15 @@ $violet: #4B479E;
     align-items: $align;
 }
 
+@mixin absolutePosition ($top, $left, $width:100%, $height:100%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    height: $height;
+    width: $width;
+
+
+}
 
 
 @mixin container {
