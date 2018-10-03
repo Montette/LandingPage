@@ -495,7 +495,8 @@ ul {
             justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    z-index: 1; }
     @media screen and (max-width: 320px) {
       .header .nav {
         font-size: 50px; } }
@@ -754,6 +755,162 @@ ul {
       .header__lotto-logo:last-child {
         display: none; } }
 
+.services__container {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 100px;
+  font-size: calc(10px + 170 * ( (100vw - 320px) / 1600));
+  padding: 0 1em;
+  border-right: 2px solid black;
+  border-left: 2px solid black; }
+  @media screen and (max-width: 320px) {
+    .services__container {
+      font-size: 10px; } }
+  @media screen and (min-width: 1920px) {
+    .services__container {
+      font-size: 180px; } }
+
+.services__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 1em; }
+  @media only screen and (max-width: 768px) {
+    .services__row {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; } }
+
+.services__image-container {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
+  @media only screen and (max-width: 768px) {
+    .services__image-container {
+      width: 80%;
+      margin-top: .5em; } }
+  @media only screen and (max-width: 340px) {
+    .services__image-container {
+      width: 90%;
+      margin: 1.5em 0; } }
+
+.services__image {
+  max-width: 85%;
+  height: auto; }
+
+.services__description {
+  width: 50%;
+  text-align: center;
+  padding: .3em .25em .4em .25em; }
+  @media only screen and (max-width: 768px) {
+    .services__description {
+      width: 100%;
+      padding: 1em 1em 0 1em; } }
+
+.services__title {
+  color: #4B479E;
+  font-weight: 800;
+  font-size: calc(16px + 9 * ( (100vw - 320px) / 1600));
+  margin: 0 0 1.3em 0; }
+  @media screen and (max-width: 320px) {
+    .services__title {
+      font-size: 16px; } }
+  @media screen and (min-width: 1920px) {
+    .services__title {
+      font-size: 25px; } }
+  @media only screen and (max-width: 768px) {
+    .services__title {
+      margin-bottom: .8em; } }
+
+.services__text {
+  font-size: calc(8px + 10 * ( (100vw - 320px) / 1600));
+  line-height: 1.8em;
+  font-weight: 700;
+  color: #4d4d4d; }
+  @media screen and (max-width: 320px) {
+    .services__text {
+      font-size: 8px; } }
+  @media screen and (min-width: 1920px) {
+    .services__text {
+      font-size: 18px; } }
+  @media only screen and (max-width: 1280px) {
+    .services__text {
+      font-size: 12px; } }
+
+.services .service {
+  -webkit-box-shadow: 2px 2px 30px rgba(75, 71, 158, 0.2);
+          box-shadow: 2px 2px 30px rgba(75, 71, 158, 0.2);
+  font-size: calc(12px + 6 * ( (100vw - 320px) / 1600));
+  width: 20%;
+  margin: 40px 20px; }
+  @media screen and (max-width: 320px) {
+    .services .service {
+      font-size: 12px; } }
+  @media screen and (min-width: 1920px) {
+    .services .service {
+      font-size: 18px; } }
+  @media only screen and (max-width: 1280px) {
+    .services .service {
+      width: 40%; } }
+  @media only screen and (max-width: 768px) {
+    .services .service {
+      width: 60%; } }
+  .services .service__image-container {
+    padding: .9em 0 0 1.5em; }
+  .services .service__image {
+    max-width: 50%;
+    height: 9em; }
+  .services .service__title {
+    font-size: 1.1em;
+    font-weight: 800;
+    line-height: 1.4em; }
+  .services .service__content {
+    padding: 1em 2em;
+    color: #352d5e; }
+  .services .service__text {
+    font-size: .94em;
+    line-height: 1.5em;
+    margin: 1em 0 .2em 0;
+    font-weight: 700; }
+  .services .service__footer {
+    background: #4B479E;
+    text-align: center;
+    padding: 1em 0;
+    font-size: .9em;
+    color: #fff; }
+  .services .service__link {
+    position: relative;
+    z-index: 0; }
+    .services .service__link:hover {
+      color: #72B2F2; }
+    .services .service__link:after {
+      position: absolute;
+      top: 50%;
+      left: auto;
+      height: 4px;
+      width: 4px;
+      right: -10px;
+      content: '';
+      -webkit-transform: rotate(45deg) translateY(-50%);
+              transform: rotate(45deg) translateY(-50%);
+      border-top: 2px solid #72B2F2;
+      border-right: 2px solid #72B2F2; }
+
 section {
-  background-color: #512286;
   height: 100vh; }

@@ -64,6 +64,7 @@ ul {
         @include fluidSize(50px, 90px);
         height: 1em;
         @include flexPosition(center, center);
+        z-index: 1;
        
 
         &.colorNav {
@@ -259,8 +260,121 @@ ul {
     }
 }
 
-
+.services {
+    &__container {
+        @include container;
+        
+    }
+    &__row {
+        @include flexPosition(space-between,center);
+        flex-wrap: wrap;
+        padding-top:1em;
+        @media only screen and (max-width: 768px){
+            justify-content: center;
+        }
+    }
+    &__image-container{
+        width: 50%;
+        @include flexPosition(center, flex-end);
+        @media only screen and (max-width: 768px){
+            width: 80%;
+            margin-top: .5em;   
+        }
+        @media only screen and (max-width: 340px){
+            width: 90%;
+            margin: 1.5em 0; 
+        }
+    }
+    &__image {
+        max-width:85%;
+        height: auto;
+    }
+    &__description{
+        width: 50%;
+        text-align: center;
+        padding: .3em .25em .4em .25em;
+        @media only screen and (max-width: 768px){
+            width: 100%;
+            padding: 1em 1em 0 1em;
+        }
+    
+    }
+    &__title {
+        @include fontStyle($violet,800);
+        @include fluidSize (16px,25px);
+        margin: 0 0 1.3em 0;
+        @media only screen and (max-width: 768px){
+            margin-bottom: .8em;
+        }
+        
+    }
+    &__text {
+        @include fluidSize (8px,18px);
+        line-height: 1.8em;
+        font-weight: 700;
+        color: lighten(#000,30%);
+        @media only screen and (max-width: 1280px){
+            font-size: 12px;
+        }
+    }
+    & .service {
+        box-shadow: 2px 2px 30px rgba($violet, .2);
+        @include fluidSize (12px,18px);   
+        width:20%;
+        margin: 40px 20px;
+        @media only screen and (max-width: 1280px){
+            width: 40%;
+        }
+        @media only screen and (max-width: 768px){
+            width:60%;
+        }
+        &__image-container {
+            padding: .9em 0 0 1.5em;       
+        }
+        &__image {
+            max-width: 50%;
+            height: 9em;
+        }
+        &__title {
+            font-size: 1.1em;
+            font-weight: 800;
+            line-height: 1.4em;
+        }
+        &__content {
+            padding: 1em 2em;
+            color: rgb(53, 45, 94);
+        }
+        &__text {
+            font-size: .94em;
+            line-height: 1.5em;
+            margin: 1em 0 .2em 0;
+            font-weight: 700;
+        }
+        &__footer {
+            background: $violet;
+            text-align: center;
+            padding: 1em 0;
+            font-size: .9em;
+            color: #fff;
+        }
+        &__link {
+            position: relative;
+            z-index: 0;
+            &:hover {
+                color: $lightBlue;
+            }
+            &:after {
+                @include absolutePosition(50%,auto,4px,4px);
+                right: -10px;
+                content: '';
+                transform: rotate(45deg) translateY(-50%);
+                border-top: 2px solid $lightBlue;
+                border-right: 2px solid $lightBlue;
+            }
+        }
+    }
+}
 section {
-    background-color: rgb(81, 34, 134);
+    
     height: 100vh;
 }
