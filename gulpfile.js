@@ -52,11 +52,11 @@ gulp.task('browserSync', function () {
 
   
   gulp.task('images', function () {
-    return gulp.src('src/images/**/*.+(png|jpg|jpeg|gif|svg)')
+    return gulp.src('src/assets/**/*.+(png|jpg|jpeg|gif|svg)')
     .pipe(cache(imagemin({
       interlaced: true
      })))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('dist/assets'))
   });
 
   gulp.task('scripts', function () {
