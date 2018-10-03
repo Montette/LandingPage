@@ -1,15 +1,43 @@
+$lightBlue: #72B2F2;
+$violet: #4B479E;
+
+@mixin fontStyle($color, $font-weight: 400){
+    color: $color;
+    font-weight: $font-weight;
+}
+
 @mixin flexPosition($justify, $align) {
     display: flex;
     justify-content: $justify;
     align-items: $align;
 }
 
+
+
 @mixin container {
-    max-width: 1500px;
+    max-width: 1920px;
+    // max-width: 150rem;
     width: 100%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 100px;
+    // padding: 0 5em;
+    @include fluidSize(10px, 180px);
+    padding: 0 1em;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
     // padding: 70px 0 90px 0;
 }
 
+@mixin fluidSize($min-font-size: 12px, $max-font-size: 21px, $min-breakpoint: 320px, $max-breakpoint: 1920px) {
+
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$min-breakpoint}) / #{(($max-breakpoint / ($max-breakpoint * 0 + 1)) - ($min-breakpoint / ($min-breakpoint * 0 + 1)))}));
+    
+    @media screen and (max-width: $min-breakpoint ) {
+      font-size: $min-font-size;
+    }
+    @media screen and (min-width: $max-breakpoint){
+      font-size: $max-font-size;
+    }
+  }
+  
 
