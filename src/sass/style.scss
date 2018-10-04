@@ -15,6 +15,7 @@ html {
 body {
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
+    letter-spacing: .5px;
 }
 
 a {
@@ -212,15 +213,22 @@ ul {
         font-weight: 800;
         margin-bottom: 0.4em;
         // opacity:0;
-        // animation: blurFadeIn 1s ease-in forwards;
+        // animation: blurFadeIn 3s ease-in forwards;
+        // animation-delay: .5s;
+        animation: pop-in 1s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+        opacity: 0;
+        animation-delay: .8s;
     }
 
     &__subtitle {
         @include fluidSize(12px, 22px);
         color: $lightBlue;
-        // opacity:0;
+        opacity:0;
         // animation: blurFadeIn 1s ease-in forwards;
-        // animation-delay: 1s;
+      
+        animation: pop-in 1s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+        animation-delay: 2s;
+  opacity: 0;
     }
 
     &__button {
@@ -232,6 +240,11 @@ ul {
         padding: .7em 1.6em;
         margin-top: 4.5em;
         transition: .3s;
+        // opacity:0;
+        // animation: blurFadeIn 1s ease-in forwards;
+        animation: pop-in 1s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
+  opacity: 0;
+        animation-delay:3s;
         &:nth-of-type(2) {
             padding: .7em 1.8em;
             position: relative;
@@ -325,7 +338,8 @@ ul {
         transition: 1s;
         &:hover {
             transform: scale(1.1);
-            box-shadow: 3px 3px 50px rgba($violet, .1);
+            filter: brightness(120%);
+            box-shadow: 3px 3px 60px rgba($violet, .3);
         }
         @media only screen and (max-width: 1280px){
             width: 40%;
@@ -381,7 +395,7 @@ ul {
 }
 
 .technology {
-    background-color: beige;
+    background-color: rgb(238, 238, 238);
 
   
     &__container {
@@ -459,6 +473,171 @@ ul {
 
 }
 
+.contact {
+   
+    background-image: url('../assets/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    text-transform: uppercase;
+    color: $smokeWhite;
+  
+    &__container {
+        @include container;
+        // @include fluidSize (12px,18px);   
+    }
+    &__content {
+        @include flexPosition(center,center);
+        flex-wrap:wrap;
+        @include fluidSize (12px,18px);  
+        padding:3em 0;
+     
+    }
+    & .informations {
+        width:40%;
+        // height: 13em;
+        margin-bottom:1em;
+        // text-transform: uppercase;
+        // color: $smokeWhite;
+        font-weight: 700;
+        // @include fontStyle($smokeWhite, 700);
+        font-size: .8em;
+        // border:1px solid white;
+        // @include flexPosition(space-between,flex-start);
+        // flex-direction: column;
+        &__adress {
+            margin-bottom:2.7em;
+        }
+        &__contactInfo{
+            margin-bottom:4em;
+        }
+        &__text {
+            margin-bottom:.6em;
+            &--green {
+                color:$green;
+            }
+        }
+        &__link {
+            margin-right: 1.1em;
+            font-size: 1.4em;
+            transition: .3s;
+            &:hover {
+                color:$green;
+            }
+        }
+    
+        @media only screen and (max-width:768px){
+            width:100%;
+            order: 2;
+            margin-top:2em;
+        }
+    }
+
+    & .form {
+        width:60%;
+        position: relative;
+        // text-align: right;
+        @media only screen and (max-width:768px){
+            width:100%;
+        }
+        &__title {
+            @include sectionTitle;
+            color:#fff;
+            text-align: left;
+            font-weight:700;
+            margin-bottom:2em;
+            text-transform: none;
+            @media only screen and (max-width: 768px){
+                margin-bottom: 3em;
+            }
+        }
+        &__col {
+            width:49%;
+            text-align: left;
+            // width: calc(50% - 1.6em);
+            position: relative;
+            display: inline-block;
+            &--textarea, &--button{
+                width: 99%;
+               
+                // margin-right: 0;
+                margin-bottom:1.5em;
+                text-align: right;
+            }
+            // margin: 0 1.5em 2em 0;
+            margin: 0 0 1.8em 0;
+            padding-right: 1.5em;
+            
+        }
+        &__input {
+            width:100%;
+            
+            background-color: transparent;
+            // @include fontStyle($smokeWhite,400);
+            text-transform: uppercase;
+            font-size: .7em;
+            color: $smokeWhite;
+            padding-bottom: .9em;
+            border:none;
+            border-bottom:1px solid $smokeWhite;
+            &:focus {
+                outline:none;
+                border-color:$green;
+            }
+            &--text:focus, &--text:valid{
+              
+                & + .form__label {
+                    bottom:105%;
+                    font-size: .6em;
+                }
+            }
+            &--textarea {
+                padding: 2em 0 0 0;
+                margin-top:1.4em;
+            }
+            // &:valid {
+            //     & + .form__label {
+            //         display: none;
+            //     }
+            // }
+        }
+        &__label {
+            position: absolute;
+            left:0;
+            bottom:42%;
+            transition: .5s;
+            font-size: .7em;
+            // text-transform: uppercase;
+            // @include fontStyle($smokeWhite,400);
+            &--textarea {
+                bottom:85%;
+            }
+        }
+        &__button {
+            background-color: transparent;
+            border:1px solid $green;
+            @include fontStyle($green,700);
+            font-size: .7em;
+            text-transform: uppercase;
+            border-radius: 80px;
+            padding: 1.5em 3.1em;
+            transition: .4s;
+            &:hover {
+                background-color: $green;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__footer {
+        @include fluidSize (10px,14px); 
+        font-weight: 700;
+        
+        padding: 0 0 4em 0;
+    }
+    
+}
+
 .animate{
     & div {
     transform: translateY(300px);
@@ -472,6 +651,7 @@ ul {
         }
     }
 }
+
 
 section {
     

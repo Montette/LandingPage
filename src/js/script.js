@@ -30,20 +30,36 @@
         window.scrollY >= 300 ? navigation.classList.add('colorNav') : navigation.classList.remove('colorNav');
     }
 
+
     const animateonScroll = () => {
-        const el = document.querySelectorAll('.animate');
-        el.forEach(el=> {
+        const elements = document.querySelectorAll('.animate');
+        
+        [...elements].forEach((el,i)=> {
             if (isInViewport(el)) {
-                el.classList.add('animateScroll')
+                el.classList.add('animateScroll');
+                // if(isInViewport(elements[elements.length - 1]) ){
+                //     console.log('last');
+                //     window.removeEventListener('scroll', animateonScroll);
+                  
+                // }
+                console.log(i);
+                console.log(elements[elements.length-1]);
+                if(i=== elements.length-1){
+                    console.log('end');
+                    window.removeEventListener('scroll', animateonScroll);
+                }
             }
     
         })
     }
 
-    window.addEventListener('scroll', () => {
-        colorizeNav();
-        animateonScroll()
-    })
+    // window.addEventListener('scroll', () => {
+    //     colorizeNav();
+    //     animateonScroll()
+    // })
+
+    window.addEventListener('scroll', animateonScroll);
+    window.addEventListener('scroll', colorizeNav)
 
 
     menuButton.addEventListener('click', () => {

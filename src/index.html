@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Source+Sans+Pro:300,400,700,900&amp;subset=latin-ext"
         rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
      <!--build:css css/styles.min.css-->
      <link rel="stylesheet" href="css/style.css">
      <!-- endbuild -->
@@ -162,8 +163,84 @@
             </div>
     
         </section>
-    <section>
-    
+    <section class="contact">
+        <div class="contact__container">
+            <div class="contact__content">
+        <div class="contact__informations informations">
+            <div class="informations__adress">
+                <p class="informations__text">Al. Pokoju 1 (XI piętro)</p>
+                <p class="informations__text">31-548 Krakow</p>
+
+            </div>
+            <div class="informations__contactInfo">
+                <p class="informations__text">Tel. <span class="informations__text informations__text--green">+48 504 020 682</span> </p>
+                <p class="informations__text">E-mail: <span class="informations__text informations__text--green">join@awww.software</span> </p>
+            </div>
+            <div class="informations__icons">
+                    <!-- <i class="fab fa-facebook-f informations__icon"></i>
+                    <i class="fab fa-youtube informations__icon"></i>
+                    <i class="fab fa-linkedin-in informations__icon"></i>
+                    <i class="fab fa-twitter informations__icon"></i>
+                    <i class="fab fa-instagram informations__icon"></i> -->
+                    <a href="https://facebook.com" target="blank" class="informations__link">
+                        <span class="fab fa-facebook-f informations_icon" aria-hidden="true"></span>
+                        <span class="visuallyhidden">Link do Facebooka</span>
+                    </a>
+                    <a href="https://youtube.com" target="blank" class="informations__link">
+                        <span class="fab fa-youtube informations_icon" aria-hidden="true"></span>
+                        <span class="visuallyhidden">Link do Youtube</span>
+                    </a>
+                    <a href="https://linkedin.com" target="blank" class="informations__link">
+                        <span class="fab fa-linkedin-in informations_icon" aria-hidden="true"></span>
+                        <span class="visuallyhidden">Link do Linkedin</span>
+                    </a>
+                    <a href="https://twitter.com" target="blank" class="informations__link">
+                        <span class="fab fa-twitter informations_icon" aria-hidden="true"></span>
+                        <span class="visuallyhidden">Link do Twittera</span>
+                    </a>
+                    <a href="https://instagram.com" target="blank" class="informations__link">
+                        <span class="fab fa-instagram informations_icon" aria-hidden="true"></span>
+                        <span class="visuallyhidden">Link do Instagramu</span>
+                    </a>
+
+
+            </div>
+        </div>
+        <form class="contact__form form">
+            <h3 class="form__title">Formularz kontaktowy</h3>
+            <div class="form__col">
+            <input type="text" class="form__input form__input--text" name="name" required >
+            <label for="name" class="form__label">Imię i nazwisko</label>
+        </div>
+        <div class="form__col">
+                <input type="text" class="form__input form__input--text" name="email" required >
+                <label for="email" class="form__label">Adres e-mail</label>
+            </div>
+            <div class="form__col">
+                    <input type="text" class="form__input form__input--text" name="phone" required>
+                    <label for="name" class="form__label">Numer telefonu</label>
+                </div>
+        <div class="form__col">
+                <input type="text" class="form__input form__input--text" name="topic" required >
+                <label for="name" class="form__label">Temat wiadomości</label>
+            </div>
+       
+             
+                    <div class="form__col form__col--textarea">
+                            <textarea type="text" class="form__input form__input--textarea" name="message" required ></textarea>
+                            <label for="message" class="form__label form__label--textarea">Imię i nazwisko</label>
+                        </div>
+                        <div class="form__col form__col--button">
+                        <button type="submit" class="form__button">Wyślij wiadomość</button>
+                    </div>
+
+        </form>
+    </div>
+        <div class="contact__footer">
+            Copyright 2018 infinity power international. Wszelkie prawa zastrzeżone.
+        </div>
+
+    </div>
     </section>
 
 

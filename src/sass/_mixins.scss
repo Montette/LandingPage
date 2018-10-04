@@ -1,5 +1,7 @@
 $lightBlue: #72B2F2;
 $violet: #4B479E;
+$green: rgb(132, 209, 87);
+$smokeWhite: darken(#fff,10%);
 
 @mixin fontStyle($color, $font-weight: 400){
     color: $color;
@@ -24,7 +26,7 @@ $violet: #4B479E;
 
 @mixin sectionTitle {
     @include fontStyle($violet,800);
-    @include fluidSize (16px,25px);
+    @include fluidSize (20px,25px);
     margin: 0 0 1.3em 0;
     @media only screen and (max-width: 768px){
         margin-bottom: .8em;
