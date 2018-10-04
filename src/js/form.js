@@ -4,8 +4,8 @@
         stringPattern = /^.{3,}$/,
         mailPattern = /^[0-9a-zA-Z_.-]+@[0-9a-zA-Z.-]+\.[a-zA-Z]{2,3}$/i,
         phonePattern = /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/,
-        requiredInputs = document.querySelectorAll('[required]');
-    form = document.querySelector('.form');
+        requiredInputs = document.querySelectorAll('[required]'),
+        form = document.querySelector('.form');
 
     const formToJSON = elements => [...elements].reduce((obj, element) => { //transform nodeList of form inputs into array and then into JSOn format
         if (element.name) {
