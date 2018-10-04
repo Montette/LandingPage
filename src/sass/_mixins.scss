@@ -2,6 +2,9 @@ $lightBlue: #72B2F2;
 $violet: #4B479E;
 $green: rgb(132, 209, 87);
 $smokeWhite: darken(#fff,10%);
+$red: darken(red, 10%);
+$black: lighten(#000,30%);
+
 
 @mixin fontStyle($color, $font-weight: 400){
     color: $color;
@@ -38,7 +41,7 @@ $smokeWhite: darken(#fff,10%);
     @include fluidSize (8px,18px);
     line-height: 1.8em;
     font-weight: 700;
-    color: lighten(#000,30%);
+    color: $black;
     @media only screen and (max-width: 1280px){
         font-size: 13px;
     }

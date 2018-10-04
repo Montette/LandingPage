@@ -1208,8 +1208,12 @@ ul {
       text-align: left;
       position: relative;
       display: inline-block;
-      margin: 0 0 1.8em 0;
+      margin: 0 0 2em 0;
       padding-right: 1.5em; }
+      @media only screen and (max-width: 500px) {
+        .contact .form__col {
+          width: 99%;
+          margin-bottom: 2.4em; } }
       .contact .form__col--textarea, .contact .form__col--button {
         width: 99%;
         margin-bottom: 1.5em;
@@ -1223,15 +1227,26 @@ ul {
       padding-bottom: .9em;
       border: none;
       border-bottom: 1px solid #e6e6e6; }
-      .contact .form__input:focus {
+      .contact .form__input:focus, .contact .form__input:valid {
         outline: none;
         border-color: #84d157; }
       .contact .form__input--text:focus + .form__label, .contact .form__input--text:valid + .form__label {
         bottom: 105%;
         font-size: .6em; }
+      .contact .form__input.warning {
+        border-color: #cc0000; }
       .contact .form__input--textarea {
         padding: 2em 0 0 0;
         margin-top: 1.4em; }
+    .contact .form__validate-warning {
+      color: #cc0000;
+      position: absolute;
+      left: 0;
+      bottom: -50%;
+      font-size: 8px;
+      display: none; }
+      .contact .form__validate-warning.warning-visible {
+        display: block; }
     .contact .form__label {
       position: absolute;
       left: 0;
@@ -1267,12 +1282,101 @@ ul {
       .contact__footer {
         font-size: 14px; } }
 
+.modal {
+  font-size: calc(15px + 5 * ( (100vw - 320px) / 1600));
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  background-color: rgba(77, 77, 77, 0.6);
+  visibility: hidden;
+  color: #4d4d4d; }
+  @media screen and (max-width: 320px) {
+    .modal {
+      font-size: 15px; } }
+  @media screen and (min-width: 1920px) {
+    .modal {
+      font-size: 20px; } }
+  .modal.background-visible {
+    visibility: visible; }
+  .modal__container {
+    max-width: 90%;
+    background-color: #fefefe;
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: auto;
+    width: 600px;
+    -webkit-transform: translate(-50%, -800%);
+            transform: translate(-50%, -800%);
+    -webkit-transition: .3s;
+    transition: .3s;
+    -webkit-box-shadow: 0 0 50px rgba(77, 77, 77, 0.8);
+            box-shadow: 0 0 50px rgba(77, 77, 77, 0.8);
+    border-radius: 5px;
+    border: 1px solid #b3b3b3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .modal__container.modal-visible {
+      -webkit-transform: translate(-50%, -25vh);
+              transform: translate(-50%, -25vh); }
+  .modal__header {
+    background-color: #eeeeee;
+    height: 3em;
+    border-bottom: 1px solid #e6e6e6;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: .5em;
+    padding: 1.7em .5em; }
+  .modal__body {
+    padding: 3em 2em;
+    border-bottom: 1px solid #e6e6e6; }
+  .modal__footer {
+    text-align: right;
+    padding: .7em; }
+  .modal__title {
+    padding-left: 5px;
+    display: inline-block; }
+  .modal__icon {
+    width: 23px;
+    display: inline-block;
+    margin-bottom: 5px; }
+  .modal__button {
+    color: #fff;
+    padding: .5em .9em;
+    border: none;
+    background-color: #4B479E;
+    border-radius: 2px;
+    font-size: .9em;
+    -webkit-box-shadow: 0 2px 0 #3f3c85, 0 2px 4px 1px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 0 #3f3c85, 0 2px 4px 1px rgba(0, 0, 0, 0.4); }
+    .modal__button:hover {
+      cursor: pointer;
+      background-color: #534fb0; }
+
 .animate div {
-  -webkit-transform: translateY(300px);
-          transform: translateY(300px);
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
   opacity: 0;
-  -webkit-transition: 2.5s;
-  transition: 2.5s; }
+  -webkit-transition: opacity 2s, -webkit-transform 2s;
+  transition: opacity 2s, -webkit-transform 2s;
+  transition: transform 2s, opacity 2s;
+  transition: transform 2s, opacity 2s, -webkit-transform 2s; }
 
 .animate.animateScroll div {
   -webkit-transform: translateY(0);
