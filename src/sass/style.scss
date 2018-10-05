@@ -594,6 +594,9 @@ ul {
                 outline: none;
                 border-color: $green;
             }
+            &:required {
+                box-shadow:none;
+            }
             &--text:focus,
             &--text:valid {
                 &+.form__label {
@@ -602,7 +605,7 @@ ul {
                 }
             }
             &.warning {
-                border-color: $red;
+                border-bottom-color: $red;
             }
             &--textarea {
                 padding: 2em 0 0 0;

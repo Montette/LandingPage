@@ -1,61 +1,4 @@
 
-@keyframes animateBorderBefore {
-    0%{
-        width: 0;
-        height:0;
-        border-top-color: $lightBlue;
-        border-bottom-color: transparent;
-        border-right-color: transparent;
-        border-left-color: transparent;
-    }
-    50%{
-        width: 80%;
-        left:10%;
-        height:0;
-        border-top-color: $lightBlue;
-        border-bottom-color: transparent;
-        border-right-color: $lightBlue;
-        border-left-color: transparent;
-    }
-    100%{
-        width: 100%;
-        height:100%;
-        border-top-color: $lightBlue;
-        border-bottom-color: transparent;
-        border-right-color: $lightBlue;
-        border-left-color: transparent;
-    }  
-}
-
-@keyframes animateBorderAfter {
-    0%{
-        width: 0;
-        height:0;
-        border-top-color: transparent;
-        border-bottom-color: transparent;
-        border-right-color: transparent;
-        border-left-color: $lightBlue;
-    }
-    50%{
-        width:0;
-        height:80%;
-        top: 10%;
-        border-top-color: transparent;
-        border-bottom-color: $lightBlue;
-        border-right-color: transparent;
-        border-left-color: $lightBlue;
-    }
-    100%{
-        width: 100%;
-        height:100%;
-        border-top-color: transparent;
-        border-bottom-color: $lightBlue;
-        border-right-color: transparent;
-        border-left-color: $lightBlue;
-    }
-}
-
-
 @keyframes pop-in {
     0% {
       opacity: 0;
@@ -80,7 +23,6 @@
           box-shadow:none
       }
       100%{
-        // box-shadow: inset -3px 3px 0px 1px $lightBlue;
         box-shadow: inset -1px 1px 0px 1px $lightBlue;
       }
   }
@@ -90,7 +32,6 @@
         box-shadow:none
     }
     100%{
-        // box-shadow: inset 3px -3px 0px 1px $lightBlue;
         box-shadow: inset 1px -1px 0px 1px $lightBlue;
     }
 }
