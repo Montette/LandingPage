@@ -50,8 +50,6 @@ $black: lighten(#000,30%);
     margin: 0 auto;
     @include fluidSize(10px, 180px);
     padding: .8em 1em;  
-    border-right: 2px solid black;
-    border-left: 2px solid black;
     @media only screen and (max-width:768px){
         padding: 2em 1em;     
     }
