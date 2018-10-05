@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-html {
-    @include fluidSize(10px, 30px);
-}
-
 body {
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
@@ -44,21 +40,22 @@ ul {
     display: flex;
     @include flexPosition(initial, initial);
     padding-top: 30vh;
-    background-image: url('../assets/bg2.jpg');
+    background: url('../assets/bg2.jpg');
     background-size: cover;
-    background-position: center; // @media only screen and (max-width:768px){
-    //     min-height: 95vh;
-    // }
+    background-position: center;
     &__container {
         @include container;
         @include flexPosition(space-between,
         initial);
+        padding-bottom: 0;
         flex-direction: column;
+        @media only screen and (max-width: 768px) {
+            padding-bottom:0;
+        }
     }
     & .nav {
         position: fixed;
         width: 100%;
-        height: 80px;
         top: 0;
         left: 0;
         @include fluidSize(50px,
@@ -74,7 +71,6 @@ ul {
             @include flexPosition(space-between,
             center);
             @include container;
-            height: 60px;
         }
         &__menu {
             @include flexPosition(space-between,
@@ -215,13 +211,11 @@ ul {
         }
     }
     &__title {
-        color: #ffff;
+        color: #fff;
         @include fluidSize(25px,
         70px);
         font-weight: 800;
-        margin-bottom: 0.4em; // opacity:0;
-        // animation: blurFadeIn 3s ease-in forwards;
-        // animation-delay: .5s;
+        margin-bottom: 0.4em;
         animation: pop-in 1s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
         opacity: 0;
         animation-delay: .8s;
@@ -230,7 +224,7 @@ ul {
         @include fluidSize(12px,
         22px);
         color: $lightBlue;
-        opacity: 0; // animation: blurFadeIn 1s ease-in forwards;
+        opacity: 0;
         animation: pop-in 1s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
         animation-delay: 2s;
         opacity: 0;
@@ -244,8 +238,7 @@ ul {
         background-color: rgb(50, 42, 90);
         padding: .7em 1.6em;
         margin-top: 4.5em;
-        transition: .3s; // opacity:0;
-        // animation: blurFadeIn 1s ease-in forwards;
+        transition: .3s;
         animation: pop-in 1s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
         opacity: 0;
         animation-delay: 3s;
@@ -276,7 +269,7 @@ ul {
         flex-end);
     }
     &__lotto-logo {
-        width: 3.5rem;
+        width: 2.7em;
         height: auto;
         &:last-child {
             @media only screen and (max-width: 768px) {
@@ -289,17 +282,23 @@ ul {
 .services {
     &__container {
         @include container;
+        padding-bottom: .4em;
+        @media only screen and (max-width: 768px) {
+            padding-bottom: 2em;
+        }
     }
     &__row {
         @include flexPosition(space-between,
         center);
         flex-wrap: wrap;
-        padding-top: 1em;
         @media only screen and (max-width: 768px) {
             justify-content: center;
         }
         &:nth-child(2) {
-            padding-bottom: .3em;
+            padding-top: .7em;
+            @media only screen and (max-width: 768px) {
+                padding-top: 1.5em;
+            }
         }
     }
     &__image-container {
@@ -308,15 +307,13 @@ ul {
         flex-end);
         @media only screen and (max-width: 768px) {
             width: 80%;
-            margin-top: .5em;
         }
         @media only screen and (max-width: 340px) {
             width: 90%;
-            margin: 1.5em 0;
         }
     }
     &__image {
-        max-width: 85%;
+        width: 85%;
         height: auto;
     }
     &__description {
@@ -350,7 +347,10 @@ ul {
             width: 40%;
         }
         @media only screen and (max-width: 768px) {
-            width: 60%;
+            width: 80%;
+            max-width: 270px;
+            @include fluidSize (14px,
+            18px);
         }
         &__image-container {
             padding: .9em 0 0 1.5em;
@@ -408,22 +408,12 @@ ul {
         @include container;
         @include flexPosition(center,
         center);
+        padding: .9em 1em;
         @media only screen and (max-width: 768px) {
             flex-wrap:wrap;
         }
-        padding-top: .8em;
-        padding-bottom: .8em;
-        @media only screen and (max-width: 768px) {
-            padding-top: 1em;
-            padding-bottom: 1em;
-        }
-        @media only screen and (max-width: 450px) {
-            padding-top: 2em;
-            padding-bottom: 2em;
-        }
     }
     &__description {
-        // @include fluidSize (12px,18px);
         width: 50%;
         text-align: center;
         padding: 0 0.2em;
@@ -451,7 +441,7 @@ ul {
         flex-shrink: 10;
     }
     &__image {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         @media only screen and (max-width: 768px) {
             max-width:80%;
@@ -479,6 +469,11 @@ ul {
     color: $smokeWhite;
     &__container {
         @include container;
+        padding-top: .6em;
+        padding-bottom: .1em;
+        @media only screen and (max-width: 768px) {
+            padding-bottom: 0;
+        }
     }
     &__content {
         @include flexPosition(center,
@@ -486,7 +481,9 @@ ul {
         flex-wrap: wrap;
         @include fluidSize (12px,
         18px);
-        padding: 3em 0;
+        @media only screen and (max-width: 768px) {
+            @include fluidSize (17px, 18px);
+        }
     }
     & .informations {
         width: 40%;
@@ -517,6 +514,7 @@ ul {
             width: 100%;
             order: 2;
             margin-top: 2em;
+            font-size: .7em;
         }
     }
     & .form {
@@ -583,17 +581,6 @@ ul {
                 margin-top: 1.4em;
             }
         }
-        &__validate-warning {
-            color: $red;
-            position: absolute;
-            left: 0;
-            bottom: -50%;
-            font-size: 8px;
-            display: none;
-            &.warning-visible {
-                display: block;
-            }
-        }
         &__label {
             position: absolute;
             left: 0;
@@ -625,7 +612,7 @@ ul {
         @include fluidSize (10px,
         14px);
         font-weight: 700;
-        padding: 0 0 4em 0;
+        padding: 3em 0 4em 0;
     }
 }
 
@@ -706,13 +693,13 @@ ul {
 }
 
 .animate {
-    & div {
+    &>* {
         transform: translateY(100px);
         opacity: 0;
         transition: transform 2s, opacity 2s;
     }
     &.animateScroll {
-        & div {
+        &>* {
             transform: translateY(0);
             opacity: 1;
         }

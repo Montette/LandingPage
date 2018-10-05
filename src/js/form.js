@@ -3,7 +3,8 @@
     const namePattern = /^([a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]{3,})+(?:[\s-][a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]+)*$/i,
         stringPattern = /^.{3,}$/,
         mailPattern = /^[0-9a-zA-Z_.-]+@[0-9a-zA-Z.-]+\.[a-zA-Z]{2,3}$/i,
-        phonePattern = /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/,
+        // phonePattern = /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/,
+        phonePattern = /[^/w]?(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/,
         requiredInputs = document.querySelectorAll('[required]'),
         form = document.querySelector('.form');
 
@@ -12,16 +13,12 @@
             obj[element.name] = element.value;
         }
         return obj;
-
     }, {});
-
-
 
     const showModal = (information) => {
         document.querySelector('.modal__container').classList.add('modal-visible');
         document.querySelector('.modal').classList.add('background-visible');
         document.querySelector('.modal__information').innerHTML = information;
-
     }
 
     const sendData = () => {
@@ -40,6 +37,7 @@
             .then(res => res.json())
             .then(res => {
                 showModal(successMessage);
+                form.reset()
             })
             .catch(err => {
                 console.log(err);
@@ -123,16 +121,13 @@
         event.preventDefault();
         let formIsCorrect = true;
         [...requiredInputs].forEach(input => {
-            const inputType = input.type.toLowerCase();
             const inputName = input.name.toLowerCase();
             if ((inputName === 'message' || inputName === 'topic') && validateInput(input, stringPattern) === false) {
                 formIsCorrect = false;
             }
-
             if (inputName === 'name' && validateInput(input, namePattern) === false) {
                 formIsCorrect = false;
             }
-
             if (inputName === 'email' && validateInput(input, mailPattern) === false) {
                 formIsCorrect = false;
             }
@@ -162,8 +157,5 @@
         validateForm();
         loadFromLocalStorage()
     })
-
-
-
 
 }())

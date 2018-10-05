@@ -23,8 +23,6 @@ $black: lighten(#000,30%);
     left: $left;
     height: $height;
     width: $width;
-
-
 }
 
 @mixin sectionTitle {
@@ -33,8 +31,7 @@ $black: lighten(#000,30%);
     margin: 0 0 1.3em 0;
     @media only screen and (max-width: 768px){
         margin-bottom: .8em;
-    }
-    
+    }    
 }
 
 @mixin sectionParagraph {
@@ -47,25 +44,24 @@ $black: lighten(#000,30%);
     }
 }
 
-
 @mixin container {
     max-width: 1920px;
-    // max-width: 150rem;
     width: 100%;
     margin: 0 auto;
-    padding: 0 100px;
-    // padding: 0 5em;
     @include fluidSize(10px, 180px);
-    padding: 0 1em;
+    padding: .8em 1em;  
     border-right: 2px solid black;
     border-left: 2px solid black;
-    // padding: 70px 0 90px 0;
+    @media only screen and (max-width:768px){
+        padding: 2em 1em;     
+    }
+    @media only screen and (max-width:450px){
+        padding: 70px 1em;  
+    }
 }
 
 @mixin fluidSize($min-font-size: 12px, $max-font-size: 21px, $min-breakpoint: 320px, $max-breakpoint: 1920px) {
-
-    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$min-breakpoint}) / #{(($max-breakpoint / ($max-breakpoint * 0 + 1)) - ($min-breakpoint / ($min-breakpoint * 0 + 1)))}));
-    
+    font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$min-breakpoint}) / #{(($max-breakpoint / ($max-breakpoint * 0 + 1)) - ($min-breakpoint / ($min-breakpoint * 0 + 1)))})); 
     @media screen and (max-width: $min-breakpoint ) {
       font-size: $min-font-size;
     }

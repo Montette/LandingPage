@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&amp;subset=latin-ext" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Source+Sans+Pro:300,400,700,900&amp;subset=latin-ext"
-        rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <!--build:css css/styles.min.css-->
@@ -20,7 +18,7 @@
     <div class="modal">
         <div class="modal__container">
             <div class="modal__header">
-                <img class="modal__icon" aria-hidden="true" src="assets/info.svg" alt="">
+                <img class="modal__icon" src="assets/info.svg" alt="">
                 <h4 class="modal__title">Status Twojej wiadomości</h4>
             </div>
             <div class="modal__body">
@@ -32,12 +30,11 @@
         </div>
     </div>
     <header class="header" id="home">
-
         <nav class="header__nav nav">
             <div class="nav__container ">
                 <div class="nav__logo">
                     <a href="#home" class="nav__logo-link">
-                        <img class="nav__logo-img" src="assets/main-logo.svg" alt="">
+                        <img class="nav__logo-img" src="assets/main-logo.svg" alt="AWWW.Software">
                     </a>
                 </div>
                 <button aria-label="open menu" class="nav__burger burger">
@@ -84,12 +81,12 @@
         <div class="services__container">
             <div class="services__row animate">
                 <div class="services__image-container">
-                    <img src="assets/awww-illustration-1.png" alt="" class="services__image">
+                    <img src="assets/awww-illustration-1.png" alt="people working together in the office" class="services__image">
                 </div>
                 <div class="services__description">
                     <h2 class="services__title">What we do</h2>
                     <p class="services__text">
-                        Budujemy marki. Pomysłi plany zamieniamy w rzeczywistość. Projektujemy i realizujemy kompleksowe kampanie oraz pojedyńcze
+                        Budujemy marki. Pomysły i plany zamieniamy w rzeczywistość. Projektujemy i realizujemy kompleksowe kampanie oraz pojedyńcze
                         działania dla produktów, usług i marek. Tworzymy identyfikację wizualną i komunikację. Wdrażdamy
                         nowe rozwiązania i usprawniamy te, które mogą działać lepiej. Wiemy, że odważne pomysły czynią marki
                         sławnymi.
@@ -97,7 +94,7 @@
                 </div>
             </div>
             <div class="services__row animate">
-                <div class="services__service service">
+                <article class="services__service service animate">
                     <div class="service__image-container">
                         <img src="assets/awww-web.svg" alt="" class="service__image">
                     </div>
@@ -109,8 +106,8 @@
                     <div class="service__footer">
                         <a href="" class="service__link">Read more</a>
                     </div>
-                </div>
-                <div class="services__service service">
+                </article>
+                <article class="services__service service animate">
                     <div class="service__image-container">
                         <img src="assets/awww-mobile.svg" alt="" class="service__image">
                     </div>
@@ -122,8 +119,8 @@
                     <div class="service__footer">
                         <a href="" class="service__link">Read more</a>
                     </div>
-                </div>
-                <div class="services__service service">
+                </article>
+                <article class="services__service service animate">
                     <div class="service__image-container">
                         <img src="assets/awww-product.svg" alt="" class="service__image">
                     </div>
@@ -135,8 +132,8 @@
                     <div class="service__footer">
                         <a href="" class="service__link">Read more</a>
                     </div>
-                </div>
-                <div class="services__service service">
+                </article>
+                <article class="services__service service animate">
                     <div class="service__image-container">
                         <img src="assets/awww-staff.svg" alt="" class="service__image">
                     </div>
@@ -148,7 +145,7 @@
                     <div class="service__footer">
                         <a href="" class="service__link">Read more</a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -169,7 +166,6 @@
                 <img src="assets/awww-stack.png" alt="" class="technology__image">
             </div>
         </div>
-
     </section>
     <section class="technology technology--white animate">
         <div class="technology__container">
@@ -188,7 +184,6 @@
                 <img src="assets/awww-stack.png" alt="" class="technology__image">
             </div>
         </div>
-
     </section>
     <section class="contact" id="contact">
         <div class="contact__container">
@@ -197,7 +192,6 @@
                     <div class="informations__adress">
                         <p class="informations__text">Al. Pokoju 1 (XI piętro)</p>
                         <p class="informations__text">31-548 Krakow</p>
-
                     </div>
                     <div class="informations__contactInfo">
                         <p class="informations__text">Tel.
@@ -228,51 +222,38 @@
                             <span class="fab fa-instagram informations_icon" aria-hidden="true"></span>
                             <span class="visuallyhidden">Link do Instagramu</span>
                         </a>
-
-
                     </div>
                 </div>
-                <form class="contact__form form" action="form.php" method="post">
+                <form class="contact__form form" action="">
                     <h3 class="form__title">Formularz kontaktowy</h3>
                     <div class="form__col">
-                        <input type="text" class="form__input form__input--text" name="name" required>
-
+                        <input type="text" class="form__input form__input--text" name="name" id="name" required>
                         <label for="name" class="form__label">Imię i nazwisko</label>
-                        <!-- <span class="form__validate-warning">The name must consist only of the alphabet characters</span> -->
                     </div>
                     <div class="form__col">
-                        <input type="text" class="form__input form__input--text" name="email" required>
+                        <input type="text" class="form__input form__input--text" name="email" id="email" required>
                         <label for="email" class="form__label">Adres e-mail</label>
-                        <!-- <span class="form__validate-warning">Please enter a valid email address</span> -->
                     </div>
                     <div class="form__col">
-                        <input type="text" class="form__input form__input--text" name="phone" required>
-
-                        <label for="name" class="form__label">Numer telefonu</label>
-                        <!-- <span class="form__validate-warning">The phone number must contain at least 9 digits</span> -->
+                        <input type="text" class="form__input form__input--text" name="phone" id="phone" required>
+                        <label for="phone" class="form__label">Numer telefonu</label>
                     </div>
                     <div class="form__col">
-                        <input type="text" class="form__input form__input--text" name="topic" required>
-                        <label for="name" class="form__label">Temat wiadomości</label>
-                        <!-- <span class="form__validate-warning">The topic must contain at least 3 letter</span> -->
+                        <input type="text" class="form__input form__input--text" name="topic" id="topic" required>
+                        <label for="topic" class="form__label">Temat wiadomości</label>
                     </div>
-
-
                     <div class="form__col form__col--textarea">
-                        <textarea class="form__input form__input--textarea" name="message" required></textarea>
+                        <textarea class="form__input form__input--textarea" name="message" id="message" required></textarea>
                         <label for="message" class="form__label form__label--textarea">Wiadomość</label>
-                        <!-- <span class="form__validate-warning">The message must contain at least 3 letters</span> -->
                     </div>
                     <div class="form__col form__col--button">
                         <button type="submit" class="form__button">Wyślij wiadomość</button>
                     </div>
-
                 </form>
             </div>
             <div class="contact__footer">
-                Copyright 2018 infinity power international. Wszelkie prawa zastrzeżone.
+                © Copyright 2018 infinity power international. Wszelkie prawa zastrzeżone.
             </div>
-
         </div>
     </section>
 
