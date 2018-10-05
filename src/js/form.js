@@ -137,7 +137,9 @@
         })
 
         if (formIsCorrect) {
-            sendData();
+            // sendData();
+            // 
+            event.target.submit();
             console.log('form is submitted');
         } else {
             return false;

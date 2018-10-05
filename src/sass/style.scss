@@ -113,28 +113,56 @@ ul {
         }
         &__link {
             position: relative;
-            padding: .4em 1em;
-            &:focus,
-            &:hover {
-                outline: none;
-                &:before {
-                    animation: animateBorderBefore .4s linear forwards;
+            padding: .5em 1em;
+            border-radius: 80px;
+            & span {
+                position: absolute;
+                width: 0%;
+                height: 50%;
+                overflow: hidden;
+                transition: width 300ms linear;
+                &.top-left {
+                    top: 0;
+                    left: 0;
+                    border-radius: 80px 80px 0 0;
+                    &:before {
+                        left: 0;
+                        border-radius: 80px 80px 0 0;
+                        box-shadow: inset 1px 1px 0px 1px $lightBlue, inset -1px 1px 0px 1px $lightBlue;
+                    }
                 }
-                &:after {
-                    animation: animateBorderAfter .4s linear forwards;
+                &.bottom-right {
+                    bottom: 0;
+                    right: 0;
+                    border-radius: 0 0 80px 80px;
+                    &:before {
+                        right: 0;
+                        border-radius: 0 0 80px 80px;
+                        box-shadow: inset 1px -1px 0px 1px $lightBlue, inset -1px -1px 0px 1px $lightBlue;
+                    }
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    display: block;
+                    width: 200px;
+                    height: 100%;
+                    background-repeat: 80px;
                 }
             }
-            &:before,
-            &:after {
-                content: '';
-                @include absolutePosition(-2px,
-                -2px,
-                0,
-                0);
-                background: transparent;
-                border-radius: 80px;
-                border: 2px solid transparent;
-                transition: .5s;
+            &:hover,
+            &:focus {
+                outline: none;
+                & span {
+                    width: 100%;
+                    &.top-left {
+                        animation: border1 200ms 200ms linear forwards;
+                    }
+                    &.bottom-right {
+                        animation: border2 200ms 200ms linear forwards;
+                    }
+                }
             }
         }
         &__logo-img {

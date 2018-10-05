@@ -74,3 +74,23 @@
         text-shadow: none;
       }
   }
+
+  @keyframes border1 {
+      0%{
+          box-shadow:none
+      }
+      100%{
+        // box-shadow: inset -3px 3px 0px 1px $lightBlue;
+        box-shadow: inset -1px 1px 0px 1px $lightBlue;
+      }
+  }
+
+  @keyframes border2 {
+    0%{
+        box-shadow:none
+    }
+    100%{
+        // box-shadow: inset 3px -3px 0px 1px $lightBlue;
+        box-shadow: inset 1px -1px 0px 1px $lightBlue;
+    }
+}
