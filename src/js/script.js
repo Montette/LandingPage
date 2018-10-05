@@ -62,25 +62,25 @@
     })
 
     const setTabIndex = () => {
-        
-            if (menuButton.classList.contains('open')) {
-                menuButton.setAttribute("aria-label", "close menu");
-                menuButton.setAttribute("aria-expanded", "true");
-                [...navLinks].forEach(link => {
-                    link.tabIndex = 0;
-                })
-            } else {
-                menuButton.setAttribute("aria-label", "open menu");
-                menuButton.setAttribute("aria-expanded", "false");
-                [...navLinks].forEach(link => {
-                    link.tabIndex = -1;
-                })
-            }
-        
+
+        if (menuButton.classList.contains('open')) {
+            menuButton.setAttribute("aria-label", "close menu");
+            menuButton.setAttribute("aria-expanded", "true");
+            [...navLinks].forEach(link => {
+                link.tabIndex = 0;
+            })
+        } else {
+            menuButton.setAttribute("aria-label", "open menu");
+            menuButton.setAttribute("aria-expanded", "false");
+            [...navLinks].forEach(link => {
+                link.tabIndex = -1;
+            })
+        }
+
     }
-    
+
     document.addEventListener('DOMContentLoaded', () => {
-        if(window.innerWidth < 768) {
+        if (window.innerWidth < 768) {
             setTabIndex()
         }
     })
